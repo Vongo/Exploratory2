@@ -26,3 +26,8 @@ plt <- ggplot(finalAggData, aes(x=factor(Year), y=TotalEmissions, fill=City)) +
   theme(plot.title = element_text(color="red", size=18, vjust=1.0))
 print(plt)
 dev.off()
+
+# The layout is foolish, because the y axis is not ordered (min value is in max)
+# This issue is due to the scale difference between the two cities, which ggplot can't manage properly.
+# I spent a lot of time trying to fix this, but couldn't.
+# The result is right though, as long as you can read the axis scale. But it is not clear.

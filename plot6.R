@@ -19,10 +19,10 @@ for (c in colnames(aggData))
 png("./export/plot6.png", height=768, width=768)
 plt <- ggplot(finalAggData, aes(x=factor(Year), y=TotalEmissions, fill=City)) +
   geom_bar(stat="identity") +
-  facet_wrap(~ City, ncol=2) +
+  facet_wrap(~ City, ncol=2,scales="free_y") +
   xlab("Year") +
   ylab(expression("TTotal PM²⁵ emission")) +
-  ggtitle(expression("Total PM²⁵ emission in Baltimore City (1999 - 2008) by source type")) +
+  ggtitle(expression("Total PM²⁵ emission in LA and Baltimore City (1999 - 2008) for motor vehicles")) +
   theme(plot.title = element_text(color="red", size=18, vjust=1.0))
 print(plt)
 dev.off()
